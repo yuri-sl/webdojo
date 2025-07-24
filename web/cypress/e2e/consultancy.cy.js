@@ -82,6 +82,10 @@ describe("Formulário de consultoria", () => {
     cy.contains(
       "Sua solicitação de consultoria foi enviada com sucesso! Em breve, nossa equipe entrará em contato através do email fornecido."
     ).should("be.visible");
+
+    //Verificar Classe e CSS de componente
+    cy.contains('p','Digite nome e sobrenome').should('be.visible').and('have.class','text-red-400').and('have.css','color','rgb(248, 113, 113)');//Asserção que garante a verificação da classe do CSS do elemento
+    cy.contains('p','Informe um email válido').should('be.visible');
   });
 });
 
