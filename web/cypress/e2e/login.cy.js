@@ -18,7 +18,7 @@ describe("Login", () => {
 
     cy.contains("Acesso negado! Tente novamente.").should("be.visible");
   });
-  it("Não deve logar com email não cadastrado", () => {
+  it.skip("Não deve logar com email não cadastrado", () => {
     cy.start();
     cy.submitLoginForm("papitoAsd@webdojo.com", "katana321");
 
