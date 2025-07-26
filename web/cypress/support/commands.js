@@ -25,6 +25,9 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 //Os commands ficam em inglês, enquanto que os its ficam em português.
+
+import "cypress-real-events";
+
 Cypress.Commands.add("start", () => {
   cy.viewport(1440, 900);
   cy.visit("http://localhost:3000");

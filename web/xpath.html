@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loja Virtual</title>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="logo">Minha Loja</h1>
+      <nav>
+        <ul>
+          <li><a href="/home">Início</a></li>
+          <li><a href="/produtos">Produtos</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="produtos-destaque">
+        <h2>Destaques</h2>
+        <div class="produto" data-id="101">
+          <h3>Camisa Azul</h3>
+          <p class="preco">R$ 49,90</p>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="produto" data-id="102">
+          <h3>Calça Jeans</h3>
+          <p class="preco">R$ 89,90</p>
+          <button class="comprar">Comprar</button>
+        </div>
+      </section>
+
+      <section id="formulario-contato">
+        <h2>Fale Conosco</h2>
+        <form action="/enviar" method="post">
+          <label>Nome:</label>
+          <input type="text" name="nome" />
+          <label>Email:</label>
+          <input type="email" name="email" />
+          <label>Mensagem:</label>
+          <textarea name="mensagem"></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Minha Loja</p>
+    </footer>
+  </body>
+</html>
