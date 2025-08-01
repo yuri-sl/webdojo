@@ -38,3 +38,20 @@ Cypress.Commands.add("submitLoginForm", (email, senha) => {
 
   cy.contains("button", "Entrar").click();
 });
+Cypress.Commands.add("login", () => {
+  cy.start();
+  cy.submitLoginForm("papito@webdojo.com", "katana123");
+});
+Cypress.Commands.add("goTo", (buttonName, pageTitle) => {
+  cy.contains("button", buttonName).should("be.visible").click();
+  cy.contains("h1", pageTitle).should("be.visible");
+  //cy.contains("h4", "Formulários")
+  //  .parent()
+  //  .parent()
+  //  .parent()
+  //  .should("be.visible");
+});
+
+Cypress.Commands.add("interactInputPlaceholder", (placeholder, text) => {
+  cy.get(`input[placeholder=${placeholder}]`).type(text);
+});
