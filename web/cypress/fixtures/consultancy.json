@@ -1,0 +1,50 @@
+{
+  "personal": {
+    "name": "Fernando Papito",
+    "email": "papito@teste.com.br",
+    "phone": "11 99999-1000",
+    "consultancyType": "Individual",
+    "personType": "cpf",
+    "document": "65602530070",
+    "discoveryChannels": [
+      "Instagram",
+      "Udemy",
+      "YouTube",
+      "Indicação de Amigo"
+    ],
+    "file": "./cypress/fixtures/1.pdf",
+    "description": "Argentina Prateada",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "WebDriverIO",
+      "PlayWright",
+      "Robot Framework"
+    ],
+    "terms": true
+  },
+  "company": {
+    "name": "Fernando Papito",
+    "email": "papito@teste.com.br",
+    "phone": "11 99999-1000",
+    "consultancyType": "Individual",
+    "personType": "cnpj",
+    "document": "65602530070",
+    "discoveryChannels": [
+      "Instagram",
+      "Udemy",
+      "YouTube",
+      "Indicação de Amigo"
+    ],
+    "file": "./cypress/fixtures/1.pdf",
+    "description": "Argentina Prateada",
+    "techs": [
+      "Cypress",
+      "Selenium",
+      "WebDriverIO",
+      "PlayWright",
+      "Robot Framework"
+    ],
+    "terms": true
+  }
+}

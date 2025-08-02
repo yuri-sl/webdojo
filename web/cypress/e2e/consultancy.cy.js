@@ -1,3 +1,8 @@
+import consultancyData from "../fixtures/consultancy.json";
+// import {personal} from ... para puxar apenas o personal
+
+Cypress.Commands.add("fillConsultancyForm", (form) => {});
+
 describe("Formulário de consultoria", () => {
   before(() => {
     cy.log("Essa execução será feita");
@@ -5,33 +10,39 @@ describe("Formulário de consultoria", () => {
   beforeEach(() => {
     cy.login();
     cy.goTo("Formulários", "Consultoria");
+
+    //cy.fixture("consultancy").as("consultancyData"); -> Força a usar function padrão
   });
   it("Deve solicitar consultoria individual", () => {
-    //Super massa de testes
-    const consultancyForm = {
-      name: "Fernando Papito",
-      email: "papito@teste.com.br",
-      phone: "11 99999-1000",
-      consultancyType: "Individual",
-      personType: "cpf",
-      document: "65602530070",
-      discoveryChannels: [
-        "Instagram",
-        "Udemy",
-        "YouTube",
-        "Indicação de Amigo",
-      ],
-      file: "./cypress/fixtures/1.pdf",
-      description: "Argentina Prateada",
-      techs: [
-        "Cypress",
-        "Selenium",
-        "WebDriverIO",
-        "PlayWright",
-        "Robot Framework",
-      ],
-      terms: true,
-    };
+    //ArrowHead function não consegue identificar o this de objetos que foram definidos em outras funções.
+    /*
+                            //Super massa de testes
+                            const consultancyForm = {
+                              name: "Fernando Papito",
+                              email: "papito@teste.com.br",
+                              phone: "11 99999-1000",
+                              consultancyType: "Individual",
+                              personType: "cpf",
+                              document: "65602530070",
+                              discoveryChannels: [
+                                "Instagram",
+                                "Udemy",
+                                "YouTube",
+                                "Indicação de Amigo",
+                              ],
+                              file: "./cypress/fixtures/1.pdf",
+                              description: "Argentina Prateada",
+                              techs: [
+                                "Cypress",
+                                "Selenium",
+                                "WebDriverIO",
+                                "PlayWright",
+                                "Robot Framework",
+                              ],
+                              terms: true,
+                            };
+                            */
+    const consultancyForm = this.consultancyData.personal;
     cy.get('input[placeholder="Digite seu nome completo"]').type(
       consultancyForm.name
     );
@@ -244,15 +255,15 @@ describe("Formulário de consultoria", () => {
     cy.contains("button", "Enviar formulário").click();
 
     /*
-                cy.contains("label", "Nome Completo")
-                  .parent()
-                  .find("p")
-                  .should("be.visible")
-                  .should("have.text", "Campo obrigatório")
-                  .and("have.class", "text-red-400")
-                  .and("have.css", "color", "rgb(248,113,113)");
-                cy.contains("label", "Email").parent();
-                */
+                                        cy.contains("label", "Nome Completo")
+                                          .parent()
+                                          .find("p")
+                                          .should("be.visible")
+                                          .should("have.text", "Campo obrigatório")
+                                          .and("have.class", "text-red-400")
+                                          .and("have.css", "color", "rgb(248,113,113)");
+                                        cy.contains("label", "Email").parent();
+                                        */
   });
   afterEach(() => {
     cy.log("Isso acontece depois de cada teste");
