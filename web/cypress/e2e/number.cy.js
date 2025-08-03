@@ -1,5 +1,3 @@
-let variavelNum = 0;
-
 describe("template spec", () => {
   beforeEach(() => {
     cy.visit("http://127.0.0.1:5500/random_num.html");
