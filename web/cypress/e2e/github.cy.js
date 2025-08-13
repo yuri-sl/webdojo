@@ -1,6 +1,6 @@
 describe("testando", () => {
     beforeEach(() => {
-        cy.login();
+        cy.login(false);
         cy.goTo("Tabela", "Perfis do GitHub");
     });
     it("Deve cadastrar um novo perfil na página de perfis do GitHub", () => {
